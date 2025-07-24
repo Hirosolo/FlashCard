@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japanese-Vietnamese Flashcard App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-4">Japanese-Vietnamese Study App</h1>
+    
+    <!-- Mode Selection -->
+    <div class="flex justify-center mb-4 space-x-2">
+      <button id="flashcardModeBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Flashcard</button>
+      <button id="testModeBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Test</button>
+    </div>
+
+    <!-- Flashcard Mode -->
+    <div id="flashcardMode" class="hidden">
+      <h2 class="text-xl font-semibold text-center mb-2">Flashcard Mode</h2>
+      <div class="relative w-full h-64 bg-gray-200 rounded-lg overflow-hidden" style="perspective: 1000px;">
+        <div id="flashcard" class="card-flip w-full h-full">
+          <div class="card-front bg-white flex items-center justify-center text-2xl font-bold p-4 border">
+            <span id="flashcardFront"></span>
+          </div>
+          <div class="card-back bg-white flex items-center justify-center text-2xl font-bold p-4 border">
+            <span id="flashcardBack"></span>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between mt-4">
+        <button id="prevFlashcardBtn" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Previous</button>
+        <button id="flipFlashcardBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Flip</button>
+        <button id="nextFlashcardBtn" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Next</button>
+      </div>
+      <p class="text-center mt-2">Card <span id="flashcardIndex">1</span> of <span id="totalFlashcards"></span></p>
+    </div>
+
+    <!-- Test Mode -->
+    <div id="testMode" class="hidden">
+      <h2 class="text-xl font-semibold text-center mb-2">Test Mode</h2>
+      <div id="testSelection" class="mb-4">
+        <label class="block text-lg font-medium mb-2">Select Words to Test:</label>
+        <div id="wordSelectionList" class="border p-2 rounded mb-2"></div>
+        <label for="testType" class="block text-lg font-medium mb-2">Select Test Type:</label>
+        <select id="testType" class="w-full p-2 border rounded mb-2">
+          <option value="multiple">Multiple-Choice</option>
+          <option value="typed">Typed-Answer</option>
+        </select>
+        <button id="startTestBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full">Start Test</button>
+      </div>
+      <div id="testContent" class="hidden">
+        <h3 class="text-lg font-medium mb-2">Question <span id="questionNumber">1</span></h3>
+        <p id="questionText" class="text-lg mb-4"></p>
+        <div id="options" class="space-y-2"></div>
+        <input id="typeAnswerInput" class="hidden w-full p-2 border rounded mt-2" type="text" placeholder="Type the Japanese term">
+        <p id="answerFeedback" class="mt-4 hidden"></p>
+        <p id="testResult" class="mt-4 hidden"></p>
+        <button id="submitTestBtn" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 hidden">Submit</button>
+        <button id="nextQuestionBtn" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 hidden">Next Question</button>
+        <button id="restartTestBtn" class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600 hidden">Restart Test</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const flashcards = [
+      { front: "これ", back: "cái này" },
+      { front: "それ", back: "cái đó" },
+      { front: "あれ", back: "cái kia" },
+      { front: "この～", back: "~ này" },
+      { front: "その～", back: "~ đó" },
+      { front: "あの～", back: "~ kia" },
+      { front: "ほん", back: "cuốn sách" },
+      { front: "じしょ", back: "từ điển" },
+      { front: "ざっし", back: "tạp chí" },
+      { front: "しんぶん", back: "báo" },
+      { front: "ノート", back: "note" },
+      { front: "てちょう", back: "sổ tay" },
+      { front: "めいし", back: "danh thiếp" },
+      { front: "カード", back: "tấm thẻ" },
+      { front: "えんぴつ", back: "bút chì chuốt" },
+      { front: "ボールペン", back: "bút bi" },
+      { front: "シャープペンシル", back: "bút chì bấm" },
+      { front: "かぎ", back: "chìa khóa" },
+      { front: "とけい", back: "đồng hồ" },
+      { front: "かさ", back: "cây dù" },
+      { front: "かばん", back: "cái cặp" },
+      { front: "シーディー (CD)", back: "đĩa CD" },
+      { front: "テレビ", back: "ti vi" },
+      { front: "ラジオ", back: "radio, máy phát thanh" },
+      { front: "カメラ", back: "máy ảnh" },
+      { front: "コンピューター", back: "máy tính" },
+      { front: "くるま", back: "xe hơi" },
+      { front: "つくえ", back: "cái bàn" },
+      { front: "いす (椅子)", back: "cái ghế" },
+      { front: "チョコレート", back: "socola" },
+      { front: "コーヒー", back: "cà phê" },
+      { front: "おみやげ (お土産)", back: "quà du lịch" },
+      { front: "えいご (英語)", back: "tiếng Anh" },
+      { front: "にほんご (日本語)", back: "tiếng Nhật" },
+      { front: "～ご (～語)", back: "tiếng ~" },
+      { front: "なん (何)", back: "cái gì" },
+      { front: "そう", back: "vậy" },
+      { front: "あのう", back: "à, ờ…" },
+      { front: "えっ", back: "hả?" },
+      { front: "どうぞ", back: "xin mời" },
+      { front: "[どうも]ありがとう[ございます]", back: "xin cám ơn" },
+      { front: "そうですか", back: "thế à" },
+      { front: "ちがいます", back: "không phải" },
+      { front: "これから おせわに なります", back: "từ nay mong anh/chị giúp đỡ tôi" },
+      { front: "こちらこそ [どうぞ] よろしく [おねがいします]", back: "chính tôi mới là người mong được anh/chị giúp đỡ" },
+      { front: "わたし", back: "tôi" },
+      { front: "あなた", back: "anh/chị/bạn" },
+      { front: "あの ひと（あの かた）", back: "người kia (vị kia)" },
+      { front: "～さん", back: "bạn ~ (sau tên)" },
+      { front: "～ちゃん", back: "bé ~ (sau tên)" },
+      { front: "～じん", back: "người (sau tên nước)" },
+      { front: "せんせい", back: "thầy/cô" },
+      { front: "きょうし", back: "giáo viên" },
+      { front: "がくせい", back: "học sinh" },
+      { front: "かいしゃいん", back: "nhân viên công ty" },
+      { front: "しゃいん", back: "nhân viên" },
+      { front: "ぎんこういん", back: "nhân viên ngân hàng" },
+      { front: "いしゃ", back: "bác sĩ" },
+      { front: "けんきゅうしゃ", back: "nhà nghiên cứu" },
+      { front: "がっこう", back: "trường học" },
+      { front: "だいがく", back: "đại học" },
+      { front: "びょういん", back: "bệnh viện" },
+      { front: "だれ（どなた）", back: "ai ?" },
+      { front: "～さい", back: "~ tuổi" },
+      { front: "なんさい（おいくつ）", back: "mấy tuổi" },
+      { front: "はい", back: "vâng, dạ" },
+      { front: "いいえ", back: "không" },
+      { front: "はじめまして", back: "rất vui được gặp anh/chị/bạn" },
+      { front: "～から きました", back: "đến từ nước ~" },
+      { front: "しつれいですが", back: "xin lỗi….cho tôi hỏi…" },
+      { front: "おなまえは？", back: "bạn tên gì?" },
+      { front: "こちらは～さんです", back: "giới thiệu đây là bạn ~" },
+      { front: "アメリカ", back: "Mỹ" },
+      { front: "イギリス", back: "Anh" },
+      { front: "インド", back: "Ấn Độ" },
+      { front: "インドネシア", back: "In-đô-nê-xi-a" },
+      { front: "かんこく", back: "Hàn Quốc" },
+      { front: "タイ", back: "Thái Lan" },
+      { front: "ちゅうごく", back: "Trung Quốc" },
+      { front: "ドイツ", back: "Đức" },
+      { front: "にほん", back: "Nhật Bản" },
+      { front: "ブラジル", back: "Braxin" },
+      { front: "ベトナム", back: "Việt Nam" },
+      { front: "フランス", back: "Pháp" },
+      { front: "[どうぞ]よろしく[おねがいします]", back: "rất vui được làm quen anh/chị/bạn" },
+      { front: "ここ", back: "chỗ này" },
+      { front: "そこ", back: "chỗ đó" },
+      { front: "あそこ", back: "chỗ kia" },
+      { front: "どこ", back: "ở đâu" },
+      { front: "こちら", back: "chỗ này (cách nói lịch sự của ここ)" },
+      { front: "そちら", back: "chỗ đó (cách nói lịch sự của そこ)" },
+      { front: "あちら", back: "chỗ kia (cách nói lịch sự của あそこ)" },
+      { front: "どちら", back: "ở đâu (cách nói lịch sự của どこ)" },
+      { front: "きょうしつ", back: "lớp học" },
+      { front: "しょくどう", back: "nhà ăn" },
+      { front: "じむしょ", back: "văn phòng" },
+      { front: "かいぎしつ", back: "phòng họp" },
+      { front: "うけつけ", back: "lễ tân" },
+      { front: "ロビー", back: "sảnh đợi" },
+      { front: "へや", back: "căn phòng" },
+      { front: "トイレ（おてあらい）", back: "nhà vệ sinh" },
+      { front: "かいだん", back: "cầu thang" },
+      { front: "エレベーター", back: "thang máy" },
+      { front: "エスカレーター", back: "thang cuốn" },
+      { front: "じどうはんばいき", back: "máy bán hàng tự động" },
+      { front: "でんわ", back: "điện thoại" },
+      { front: "くに", back: "đất nước của tôi" },
+      { front: "おくに", back: "đất nước của (bạn, anh, chị)" },
+      { front: "かいしゃ", back: "công ty" },
+      { front: "うち", back: "nhà" },
+      { front: "くつ", back: "giày" },
+      { front: "ネクタイ", back: "cà vạt" },
+      { front: "ワイン", back: "rượu" },
+      { front: "うりば", back: "quầy bán hàng" },
+      { front: "ちか", back: "tầng hầm" },
+      { front: "～かい（～がい）", back: "tầng" },
+      { front: "なんがい", back: "tầng mấy" },
+      { front: "～えん", back: "yên" },
+      { front: "いくら", back: "bao nhiêu tiền" },
+      { front: "ひゃく", back: "trăm" },
+      { front: "せん", back: "nghìn" },
+      { front: "まん", back: "mười nghìn" },
+      { front: "すみません", back: "xin lỗi" },
+      { front: "どうも", back: "cám ơn" },
+      { front: "いらっしゃいませ", back: "xin chào quí khách" },
+      { front: "[～を] みせてください", back: "cho tôi xem ~" },
+      { front: "[～を] ください", back: "cho tôi ~" },
+      { front: "イタリア", back: "Ý" },
+      { front: "スイス", back: "Thụy Sĩ" }
+    ];
+
+    let flashcardCurrent = 0;
+    let isFlashcardFlipped = false;
+    let testQuestions = [];
+    let currentQuestion = 0;
+    let score = 0;
+    let selectedTestType = 'multiple';
+
+    // DOM Elements
+    const flashcardMode = document.getElementById('flashcardMode');
+    const testMode = document.getElementById('testMode');
+    const flashcardModeBtn = document.getElementById('flashcardModeBtn');
+    const testModeBtn = document.getElementById('testModeBtn');
+    const flashcard = document.getElementById('flashcard');
+    const flashcardFront = document.getElementById('flashcardFront');
+    const flashcardBack = document.getElementById('flashcardBack');
+    const flashcardIndex = document.getElementById('flashcardIndex');
+    const totalFlashcards = document.getElementById('totalFlashcards');
+    const prevFlashcardBtn = document.getElementById('prevFlashcardBtn');
+    const flipFlashcardBtn = document.getElementById('flipFlashcardBtn');
+    const nextFlashcardBtn = document.getElementById('nextFlashcardBtn');
+    const testSelection = document.getElementById('testSelection');
+    const testContent = document.getElementById('testContent');
+    const wordSelectionList = document.getElementById('wordSelectionList');
+    const testType = document.getElementById('testType');
+    const startTestBtn = document.getElementById('startTestBtn');
+    const questionText = document.getElementById('questionText');
+    const optionsDiv = document.getElementById('options');
+    const typeAnswerInput = document.getElementById('typeAnswerInput');
+    const answerFeedback = document.getElementById('answerFeedback');
+    const testResult = document.getElementById('testResult');
+    const submitTestBtn = document.getElementById('submitTestBtn');
+    const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+    const restartTestBtn = document.getElementById('restartTestBtn');
+
+    // Initialize Flashcard Mode
+    function showFlashcardMode() {
+      flashcardMode.classList.remove('hidden');
+      testMode.classList.add('hidden');
+      updateFlashcard();
+      totalFlashcards.textContent = flashcards.length;
+    }
+
+    // Update Flashcard Display
+    function updateFlashcard() {
+      flashcardFront.textContent = flashcards[flashcardCurrent].front;
+      flashcardBack.textContent = flashcards[flashcardCurrent].back;
+      flashcardIndex.textContent = flashcardCurrent + 1;
+      isFlashcardFlipped = false;
+      flashcard.classList.remove('flipped');
+    }
+
+    // Flip Flashcard
+    flipFlashcardBtn.addEventListener('click', () => {
+      isFlashcardFlipped = !isFlashcardFlipped;
+      flashcard.classList.toggle('flipped');
+    });
+
+    // Navigate Flashcards
+    prevFlashcardBtn.addEventListener('click', () => {
+      flashcardCurrent = (flashcardCurrent - 1 + flashcards.length) % flashcards.length;
+      updateFlashcard();
+    });
+
+    nextFlashcardBtn.addEventListener('click', () => {
+      flashcardCurrent = (flashcardCurrent + 1) % flashcards.length;
+      updateFlashcard();
+    });
+
+    // Initialize Test Mode
+    function showTestMode() {
+      flashcardMode.classList.add('hidden');
+      testMode.classList.remove('hidden');
+      testSelection.classList.remove('hidden');
+      testContent.classList.add('hidden');
+      testResult.classList.add('hidden');
+      answerFeedback.classList.add('hidden');
+      restartTestBtn.classList.add('hidden');
+      populateWordSelection();
+    }
+
+    // Populate Word Selection List
+    function populateWordSelection() {
+      wordSelectionList.innerHTML = '';
+      flashcards.forEach((card, index) => {
+        const div = document.createElement('div');
+        div.className = 'flex items-center';
+        div.innerHTML = `
+          <input type="checkbox" id="word${index}" class="mr-2" value="${index}">
+          <label for="word${index}">${card.front} (${card.back})</label>
+        `;
+        wordSelectionList.appendChild(div);
+      });
+    }
+
+    // Start Test
+    startTestBtn.addEventListener('click', () => {
+      const selectedWords = Array.from(wordSelectionList.querySelectorAll('input:checked'))
+        .map(input => parseInt(input.value));
+      if (selectedWords.length === 0) {
+        alert('Please select at least one word to test.');
+        return;
+      }
+      selectedTestType = testType.value;
+      generateTest(selectedWords);
+      testSelection.classList.add('hidden');
+      testContent.classList.remove('hidden');
+      displayQuestion();
+    });
+
+    // Generate Test Questions
+    function generateTest(selectedIndices) {
+      testQuestions = [];
+      const selectedCards = selectedIndices.map(index => flashcards[index]);
+      
+      selectedCards.forEach(card => {
+        if (selectedTestType === 'typed') {
+          testQuestions.push({
+            type: 'typed',
+            question: card.back,
+            correct: card.front
+          });
+        } else {
+          const options = [card.back];
+          while (options.length < 4) {
+            const randomCard = flashcards[Math.floor(Math.random() * flashcards.length)];
+            if (!options.includes(randomCard.back)) options.push(randomCard.back);
+          }
+          testQuestions.push({
+            type: 'multiple',
+            question: card.front,
+            correct: card.back,
+            options: options.sort(() => Math.random() - 0.5)
+          });
+        }
+      });
+      currentQuestion = 0;
+      score = 0;
+      testResult.classList.add('hidden');
+      answerFeedback.classList.add('hidden');
+      restartTestBtn.classList.add('hidden');
+    }
+
+    // Display Test Question
+    function displayQuestion() {
+      if (currentQuestion < testQuestions.length) {
+        const question = testQuestions[currentQuestion];
+        questionText.textContent = question.type === 'typed' 
+          ? `Type the Japanese term for "${question.question}"`
+          : `What is the meaning of "${question.question}"?`;
+        
+        optionsDiv.innerHTML = '';
+        typeAnswerInput.classList.add('hidden');
+        typeAnswerInput.value = '';
+
+        if (question.type === 'multiple') {
+          question.options.forEach((option, index) => {
+            const button = document.createElement('button');
+            button.className = 'bg-gray-200 w-full py-2 rounded hover:bg-gray-300';
+            button.textContent = option;
+            button.addEventListener('click', () => selectOption(index));
+            optionsDiv.appendChild(button);
+          });
+        } else {
+          typeAnswerInput.classList.remove('hidden');
+        }
+
+        submitTestBtn.classList.remove('hidden');
+        nextQuestionBtn.classList.add('hidden');
+        answerFeedback.classList.add('hidden');
+        questionNumber.textContent = currentQuestion + 1;
+      } else {
+        showTestResult();
+      }
+    }
+
+    // Handle Option Selection for Multiple-Choice
+    let selectedOption = null;
+    function selectOption(index) {
+      selectedOption = index;
+      optionsDiv.querySelectorAll('button').forEach(btn => btn.classList.remove('bg-blue-300'));
+      optionsDiv.querySelectorAll('button')[index].classList.add('bg-blue-300');
+    }
+
+    // Submit Answer
+    submitTestBtn.addEventListener('click', () => {
+      const question = testQuestions[currentQuestion];
+      let isCorrect = false;
+
+      if (question.type === 'multiple' && selectedOption !== null) {
+        isCorrect = question.options[selectedOption] === question.correct;
+      } else if (question.type === 'typed' && typeAnswerInput.value.trim() !== '') {
+        isCorrect = typeAnswerInput.value.trim() === question.correct;
+      }
+
+      if (question.type === 'multiple' && selectedOption === null) return;
+      if (question.type === 'typed' && typeAnswerInput.value.trim() === '') return;
+
+      if (isCorrect) {
+        score++;
+        answerFeedback.textContent = 'Correct!';
+        answerFeedback.className = 'mt-4 text-green-600';
+      } else {
+        answerFeedback.textContent = `Incorrect. The correct answer is "${question.correct}".`;
+        answerFeedback.className = 'mt-4 text-red-600';
+      }
+      answerFeedback.classList.remove('hidden');
+      submitTestBtn.classList.add('hidden');
+      nextQuestionBtn.classList.remove('hidden');
+    });
+
+    // Next Question
+    nextQuestionBtn.addEventListener('click', () => {
+      currentQuestion++;
+      selectedOption = null;
+      displayQuestion();
+    });
+
+    // Show Test Result
+    function showTestResult() {
+      testResult.textContent = `You scored ${score} out of ${testQuestions.length}!`;
+      testResult.classList.remove('hidden');
+      optionsDiv.innerHTML = '';
+      typeAnswerInput.classList.add('hidden');
+      questionText.textContent = '';
+      submitTestBtn.classList.add('hidden');
+      nextQuestionBtn.classList.add('hidden');
+      answerFeedback.classList.add('hidden');
+      restartTestBtn.classList.remove('hidden');
+    }
+
+    // Restart Test
+    restartTestBtn.addEventListener('click', showTestMode);
+
+    // Mode Switching
+    flashcardModeBtn.addEventListener('click', showFlashcardMode);
+    testModeBtn.addEventListener('click', showTestMode);
+
+    // Initial Load
+    showFlashcardMode();
+  </script>
+</body>
+</html>
