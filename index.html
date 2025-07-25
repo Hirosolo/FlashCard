@@ -43,7 +43,13 @@
       <h2 class="text-xl font-semibold text-center mb-2">Test Mode</h2>
       <div id="testSelection" class="mb-4">
         <label class="block text-lg font-medium mb-2">Select Words to Test:</label>
-        <div id="wordSelectionList" class="border p-2 rounded mb-2"></div>
+        
+<div class="flex justify-between mb-2">
+  <button id="selectAllBtn" class="bg-blue-200 text-sm text-blue-800 px-2 py-1 rounded hover:bg-blue-300">Select All</button>
+  <button id="deselectAllBtn" class="bg-red-200 text-sm text-red-800 px-2 py-1 rounded hover:bg-red-300">Deselect All</button>
+</div>
+
+<div id="wordSelectionList" class="border p-2 rounded mb-2"></div>
         <label for="testType" class="block text-lg font-medium mb-2">Select Test Type:</label>
         <select id="testType" class="w-full p-2 border rounded mb-2">
           <option value="multiple">Multiple-Choice</option>
@@ -198,12 +204,35 @@
       { front: "スイス", back: "Thụy Sĩ" }
     ];
 
+    
+    const lessons = {
+      "Lesson 1": Array.from({ length: 10 }, (_, i) => i),
+      "Lesson 2": Array.from({ length: 10 }, (_, i) => i + 10),
+      "Lesson 3": Array.from({ length: 10 }, (_, i) => i + 20),
+      "Lesson 4": Array.from({ length: 10 }, (_, i) => i + 30),
+      "Lesson 5": Array.from({ length: 10 }, (_, i) => i + 40),
+      "Lesson 6": Array.from({ length: 10 }, (_, i) => i + 50),
+      "Lesson 7": Array.from({ length: 10 }, (_, i) => i + 60),
+      "Lesson 8": Array.from({ length: 10 }, (_, i) => i + 70),
+      "Lesson 9": Array.from({ length: 10 }, (_, i) => i + 80),
+      "Lesson 10": Array.from({ length: 10 }, (_, i) => i + 90),
+      "Lesson 11": Array.from({ length: 10 }, (_, i) => i + 100),
+      "Lesson 12": Array.from({ length: 10 }, (_, i) => i + 110),
+      "Lesson 13": Array.from({ length: 10 }, (_, i) => i + 120),
+      "Lesson 14": Array.from({ length: 10 }, (_, i) => i + 130),
+      "Lesson 15": Array.from({ length: 10 }, (_, i) => i + 140),
+      "Lesson 16": Array.from({ length: 10 }, (_, i) => i + 150),
+      "Lesson 17": Array.from({ length: 10 }, (_, i) => i + 160),
+      "Lesson 18": Array.from({ length: 10 }, (_, i) => i + 170),
+    };
+
     let flashcardCurrent = 0;
     let isFlashcardFlipped = false;
     let testQuestions = [];
     let currentQuestion = 0;
     let score = 0;
     let selectedTestType = 'multiple';
+    let previousSelectedWords = [];
 
     // DOM Elements
     const flashcardMode = document.getElementById('flashcardMode');
@@ -231,6 +260,18 @@
     const submitTestBtn = document.getElementById('submitTestBtn');
     const nextQuestionBtn = document.getElementById('nextQuestionBtn');
     const restartTestBtn = document.getElementById('restartTestBtn');
+
+    
+    const selectAllBtn = document.getElementById('selectAllBtn');
+    const deselectAllBtn = document.getElementById('deselectAllBtn');
+
+    selectAllBtn.addEventListener('click', () => {
+      wordSelectionList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+    });
+
+    deselectAllBtn.addEventListener('click', () => {
+      wordSelectionList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    });
 
     // Initialize Flashcard Mode
     function showFlashcardMode() {
@@ -266,6 +307,41 @@
       updateFlashcard();
     });
 
+    
+    const lessonSelect = document.createElement('select');
+    lessonSelect.id = "lessonSelect";
+    lessonSelect.className = "w-full p-2 border rounded mb-2";
+    lessonSelect.setAttribute("multiple", "");
+    lessonSelect.setAttribute("size", "5");
+    for (const lesson in lessons) {
+      const option = document.createElement('option');
+      option.value = lesson;
+      option.textContent = lesson;
+      lessonSelect.appendChild(option);
+    }
+    testSelection.insertBefore(lessonSelect, wordSelectionList);
+
+    lessonSelect.addEventListener('change', () => {
+      const selectedOptions = Array.from(lessonSelect.selectedOptions).map(opt => opt.value);
+      const selectedIndices = selectedOptions.flatMap(lesson => lessons[lesson] || []);
+      populateWordSelection(selectedIndices);
+    });
+
+    function populateWordSelection(indices = []) {
+      wordSelectionList.innerHTML = '';
+      const list = indices.length ? indices : flashcards.map((_, i) => i);
+      list.forEach(index => {
+        const card = flashcards[index];
+        const div = document.createElement('div');
+        div.className = 'flex items-center';
+        div.innerHTML = `
+          <input type="checkbox" id="word${index}" class="mr-2" value="${index}" checked>
+          <label for="word${index}">${card.front} (${card.back})</label>
+        `;
+        wordSelectionList.appendChild(div);
+      });
+    }
+
     // Initialize Test Mode
     function showTestMode() {
       flashcardMode.classList.add('hidden');
@@ -275,13 +351,22 @@
       testResult.classList.add('hidden');
       answerFeedback.classList.add('hidden');
       restartTestBtn.classList.add('hidden');
+      // Auto-select all lessons
+      if (lessonSelect) {
+        Array.from(lessonSelect.options).forEach(option => option.selected = true);
+        const allIndices = Object.values(lessons).flat();
+        populateWordSelection(allIndices);
+      }
+
       populateWordSelection();
     }
 
     // Populate Word Selection List
-    function populateWordSelection() {
+    function populateWordSelection(indices = []) {
       wordSelectionList.innerHTML = '';
-      flashcards.forEach((card, index) => {
+      const list = indices.length ? indices : flashcards.map((_, i) => i);
+  list.forEach(index => {
+    const card = flashcards[index];
         const div = document.createElement('div');
         div.className = 'flex items-center';
         div.innerHTML = `
@@ -301,6 +386,7 @@
         return;
       }
       selectedTestType = testType.value;
+      previousSelectedWords = selectedWords;
       generateTest(selectedWords);
       testSelection.classList.add('hidden');
       testContent.classList.remove('hidden');
@@ -338,6 +424,13 @@
       testResult.classList.add('hidden');
       answerFeedback.classList.add('hidden');
       restartTestBtn.classList.add('hidden');
+      // Auto-select all lessons
+      if (lessonSelect) {
+        Array.from(lessonSelect.options).forEach(option => option.selected = true);
+        const allIndices = Object.values(lessons).flat();
+        populateWordSelection(allIndices);
+      }
+
     }
 
     // Display Test Question
@@ -429,7 +522,14 @@
     }
 
     // Restart Test
-    restartTestBtn.addEventListener('click', showTestMode);
+    
+    restartTestBtn.addEventListener('click', () => {
+      generateTest(previousSelectedWords);
+      testSelection.classList.add('hidden');
+      testContent.classList.remove('hidden');
+      displayQuestion();
+    });
+    
 
     // Mode Switching
     flashcardModeBtn.addEventListener('click', showFlashcardMode);
