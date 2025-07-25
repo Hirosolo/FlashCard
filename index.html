@@ -265,8 +265,8 @@
       if (currentQuestion < testQuestions.length) {
         const question = testQuestions[currentQuestion];
         questionText.textContent = question.type === 'typed' 
-          ? `Type the Japanese term for "${question.question}"`
-          : `What is the meaning of "${question.question}"?`;
+          ? `${question.question}`
+          : `${question.question}`;
         
         optionsDiv.innerHTML = '';
         typeAnswerInput.classList.add('hidden');
