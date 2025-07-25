@@ -3,532 +3,611 @@
     {
       "name": "Lesson 1",
       "words": [
-        {
-          "front": "わたし",
-          "back": "tôi"
-        },
-        {
-          "front": "あなた",
-          "back": "anh/chị/bạn"
-        },
-        {
-          "front": "あの ひと（あの かた）",
-          "back": "người kia (vị kia)"
-        },
-        {
-          "front": "～さん",
-          "back": "bạn ~ (sau tên)"
-        },
-        {
-          "front": "～ちゃん",
-          "back": "bé ~ (sau tên)"
-        },
-        {
-          "front": "～じん",
-          "back": "người (sau tên nước)"
-        },
-        {
-          "front": "せんせい",
-          "back": "thầy/cô"
-        },
-        {
-          "front": "きょうし",
-          "back": "giáo viên"
-        },
-        {
-          "front": "がくせい",
-          "back": "học sinh"
-        },
-        {
-          "front": "かいしゃいん",
-          "back": "nhân viên công ty"
-        },
-        {
-          "front": "しゃいん",
-          "back": "nhân viên"
-        },
-        {
-          "front": "ぎんこういん",
-          "back": "nhân viên ngân hàng"
-        },
-        {
-          "front": "いしゃ",
-          "back": "bác sĩ"
-        },
-        {
-          "front": "けんきゅうしゃ",
-          "back": "nhà nghiên cứu"
-        },
-        {
-          "front": "がっこう",
-          "back": "trường học"
-        },
-        {
-          "front": "だいがく",
-          "back": "đại học"
-        },
-        {
-          "front": "びょういん",
-          "back": "bệnh viện"
-        },
-        {
-          "front": "だれ（どなた）",
-          "back": "ai ?"
-        },
-        {
-          "front": "～さい",
-          "back": "~ tuổi"
-        },
-        {
-          "front": "なんさい（おいくつ）",
-          "back": "mấy tuổi"
-        },
-        {
-          "front": "はい",
-          "back": "vâng, dạ"
-        },
-        {
-          "front": "いいえ",
-          "back": "không"
-        },
-        {
-          "front": "はじめまして",
-          "back": "rất vui được gặp anh/chị/bạn"
-        },
-        {
-          "front": "～から きました",
-          "back": "đến từ nước ~"
-        },
-        {
-          "front": "しつれいですが",
-          "back": "xin lỗi….cho tôi hỏi…"
-        },
-        {
-          "front": "おなまえは？",
-          "back": "bạn tên gì?"
-        },
-        {
-          "front": "こちらは～さんです",
-          "back": "giới thiệu đây là bạn ~"
-        },
-        {
-          "front": "アメリカ",
-          "back": "Mỹ"
-        },
-        {
-          "front": "イギリス",
-          "back": "Anh"
-        },
-        {
-          "front": "インド",
-          "back": "Ấn Độ"
-        },
-        {
-          "front": "インドネシア",
-          "back": "In-đô-nê-xi-a"
-        },
-        {
-          "front": "かんこく",
-          "back": "Hàn Quốc"
-        },
-        {
-          "front": "タイ",
-          "back": "Thái Lan"
-        },
-        {
-          "front": "ちゅうごく",
-          "back": "Trung Quốc"
-        },
-        {
-          "front": "ドイツ",
-          "back": "Đức"
-        },
-        {
-          "front": "にほん",
-          "back": "Nhật Bản"
-        },
-        {
-          "front": "ブラジル",
-          "back": "Braxin"
-        },
-        {
-          "front": "ベトナム",
-          "back": "Việt Nam"
-        },
-        {
-          "front": "フランス",
-          "back": "Pháp"
-        },
-        {
-          "front": "[どうぞ]よろしく[おねがいします]",
-          "back": "rất vui được làm quen anh/chị/bạn"
-        }
+        {"front": "わたし", "back": "tôi"},
+        {"front": "あなた", "back": "anh/chị/bạn"},
+        {"front": "あの ひと（あの かた）", "back": "người kia (vị kia)"},
+        {"front": "～さん", "back": "bạn ~ (sau tên)"},
+        {"front": "～ちゃん", "back": "bé ~ (sau tên)"},
+        {"front": "～じん", "back": "người (sau tên nước)"},
+        {"front": "せんせい", "back": "thầy/cô"},
+        {"front": "きょうし", "back": "giáo viên"},
+        {"front": "がくせい", "back": "học sinh"},
+        {"front": "かいしゃいん", "back": "nhân viên công ty"},
+        {"front": "しゃいん", "back": "nhân viên"},
+        {"front": "ぎんこういん", "back": "nhân viên ngân hàng"},
+        {"front": "いしゃ", "back": "bác sĩ"},
+        {"front": "けんきゅうしゃ", "back": "nhà nghiên cứu"},
+        {"front": "がっこう", "back": "trường học"},
+        {"front": "だいがく", "back": "đại học"},
+        {"front": "びょういん", "back": "bệnh viện"},
+        {"front": "だれ（どなた）", "back": "ai ?"},
+        {"front": "～さい", "back": "~ tuổi"},
+        {"front": "なんさい（おいくつ）", "back": "mấy tuổi"},
+        {"front": "はい", "back": "vâng, dạ"},
+        {"front": "いいえ", "back": "không"},
+        {"front": "はじめまして", "back": "rất vui được gặp anh/chị/bạn"},
+        {"front": "～から きました", "back": "đến từ nước ~"},
+        {"front": "しつれいですが", "back": "xin lỗi….cho tôi hỏi…"},
+        {"front": "おなまえは？", "back": "bạn tên gì?"},
+        {"front": "こちらは～さんです", "back": "giới thiệu đây là bạn ~"},
+        {"front": "アメリカ", "back": "Mỹ"},
+        {"front": "イギリス", "back": "Anh"},
+        {"front": "インド", "back": "Ấn Độ"},
+        {"front": "インドネシア", "back": "In-đô-nê-xi-a"},
+        {"front": "かんこく", "back": "Hàn Quốc"},
+        {"front": "タイ", "back": "Thái Lan"},
+        {"front": "ちゅうごく", "back": "Trung Quốc"},
+        {"front": "ドイツ", "back": "Đức"},
+        {"front": "にほん", "back": "Nhật Bản"},
+        {"front": "ブラジル", "back": "Braxin"},
+        {"front": "ベトナム", "back": "Việt Nam"},
+        {"front": "フランス", "back": "Pháp"},
+        {"front": "どうぞよろしくおねがいします", "back": "rất vui được làm quen anh/chị/bạn"}
       ]
     },
     {
       "name": "Lesson 2",
       "words": [
-        {
-          "front": "これ",
-          "back": "cái này"
-        },
-        {
-          "front": "それ",
-          "back": "cái đó"
-        },
-        {
-          "front": "あれ",
-          "back": "cái kia"
-        },
-        {
-          "front": "この～",
-          "back": "~ này"
-        },
-        {
-          "front": "その～",
-          "back": "~ đó"
-        },
-        {
-          "front": "あの～",
-          "back": "~ kia"
-        },
-        {
-          "front": "ほん",
-          "back": "cuốn sách"
-        },
-        {
-          "front": "じしょ",
-          "back": "từ điển"
-        },
-        {
-          "front": "ざっし",
-          "back": "tạp chí"
-        },
-        {
-          "front": "しんぶん",
-          "back": "báo"
-        },
-        {
-          "front": "ノート",
-          "back": "note"
-        },
-        {
-          "front": "てちょう",
-          "back": "sổ tay"
-        },
-        {
-          "front": "めいし",
-          "back": "danh thiếp"
-        },
-        {
-          "front": "カード",
-          "back": "tấm thẻ"
-        },
-        {
-          "front": "えんぴつ",
-          "back": "bút chì chuốt"
-        },
-        {
-          "front": "ボールペン",
-          "back": "bút bi"
-        },
-        {
-          "front": "シャープペンシル",
-          "back": "bút chì bấm"
-        },
-        {
-          "front": "かぎ",
-          "back": "chìa khóa"
-        },
-        {
-          "front": "とけい",
-          "back": "đồng hồ"
-        },
-        {
-          "front": "かさ",
-          "back": "cây dù"
-        },
-        {
-          "front": "かばん",
-          "back": "cái cặp"
-        },
-        {
-          "front": "シーディー",
-          "back": "đĩa CD"
-        },
-        {
-          "front": "テレビ",
-          "back": "ti vi"
-        },
-        {
-          "front": "ラジオ",
-          "back": "radio, máy phát thanh"
-        },
-        {
-          "front": "カメラ",
-          "back": "máy ảnh"
-        },
-        {
-          "front": "コンピューター",
-          "back": "máy tính"
-        },
-        {
-          "front": "くるま",
-          "back": "xe hơi"
-        },
-        {
-          "front": "つくえ",
-          "back": "cái bàn"
-        },
-        {
-          "front": "いす",
-          "back": "cái ghế"
-        },
-        {
-          "front": "チョコレート",
-          "back": "socola"
-        },
-        {
-          "front": "コーヒー",
-          "back": "cà phê"
-        },
-        {
-          "front": "おみやげ",
-          "back": "quà du lịch"
-        },
-        {
-          "front": "えいご",
-          "back": "tiếng Anh"
-        },
-        {
-          "front": "にほんご",
-          "back": "tiếng Nhật"
-        },
-        {
-          "front": "～ご",
-          "back": "tiếng ~"
-        },
-        {
-          "front": "なん",
-          "back": "cái gì"
-        },
-        {
-          "front": "そう",
-          "back": "vậy"
-        },
-        {
-          "front": "あのう",
-          "back": "à, ờ…"
-        },
-        {
-          "front": "えっ",
-          "back": "hả?"
-        },
-        {
-          "front": "どうぞ",
-          "back": "xin mời"
-        },
-        {
-          "front": "[どうも]ありがとう[ございます]",
-          "back": "xin cám ơn"
-        },
-        {
-          "front": "そうですか",
-          "back": "thế à"
-        },
-        {
-          "front": "ちがいます",
-          "back": "không phải"
-        },
-        {
-          "front": "これから おせわに なります",
-          "back": "từ nay mong anh/chị giúp đỡ tôi"
-        },
-        {
-          "front": "こちらこそ [どうぞ] よろしく [おねがいします]",
-          "back": "chính tôi mới là người mong được anh/chị giúp đỡ"
-        }
+        {"front": "これ", "back": "cái này"},
+        {"front": "それ", "back": "cái đó"},
+        {"front": "あれ", "back": "cái kia"},
+        {"front": "この～", "back": "~ này"},
+        {"front": "その～", "back": "~ đó"},
+        {"front": "あの～", "back": "~ kia"},
+        {"front": "ほん", "back": "cuốn sách"},
+        {"front": "じしょ", "back": "từ điển"},
+        {"front": "ざっし", "back": "tạp chí"},
+        {"front": "しんぶん", "back": "báo"},
+        {"front": "ノート", "back": "note"},
+        {"front": "てちょう", "back": "sổ tay"},
+        {"front": "めいし", "back": "danh thiếp"},
+        {"front": "カード", "back": "tấm thẻ"},
+        {"front": "えんぴつ", "back": "bút chì chuốt"},
+        {"front": "ボールペン", "back": "bút bi"},
+        {"front": "シャープペンシル", "back": "bút chì bấm"},
+        {"front": "かぎ", "back": "chìa khóa"},
+        {"front": "とけい", "back": "đồng hồ"},
+        {"front": "かさ", "back": "cây dù"},
+        {"front": "かばん", "back": "cái cặp"},
+        {"front": "シーディー", "back": "đĩa CD"},
+        {"front": "テレビ", "back": "ti vi"},
+        {"front": "ラジオ", "back": "radio, máy phát thanh"},
+        {"front": "カメラ", "back": "máy ảnh"},
+        {"front": "コンピューター", "back": "máy tính"},
+        {"front": "くるま", "back": "xe hơi"},
+        {"front": "つくえ", "back": "cái bàn"},
+        {"front": "いす", "back": "cái ghế"},
+        {"front": "チョコレート", "back": "socola"},
+        {"front": "コーヒー", "back": "cà phê"},
+        {"front": "おみやげ", "back": "quà du lịch"},
+        {"front": "えいご", "back": "tiếng Anh"},
+        {"front": "にほんご", "back": "tiếng Nhật"},
+        {"front": "～ご", "back": "tiếng ~"},
+        {"front": "なん", "back": "cái gì"},
+        {"front": "そう", "back": "vậy"},
+        {"front": "あのう", "back": "à, ờ…"},
+        {"front": "えっ", "back": "hả?"},
+        {"front": "どうぞ", "back": "xin mời"},
+        {"front": "どうもありがとうございます", "back": "xin cám ơn"},
+        {"front": "そうですか", "back": "thế à"},
+        {"front": "ちがいます", "back": "không phải"},
+        {"front": "これから おせわに なります", "back": "từ nay mong anh/chị giúp đỡ tôi"},
+        {"front": "こちらこそ どうぞ よろしく おねがいします", "back": "chính tôi mới là người mong được anh/chị giúp đỡ"}
       ]
     },
     {
       "name": "Lesson 3",
       "words": [
-        {
-          "front": "ここ",
-          "back": "chỗ này"
-        },
-        {
-          "front": "そこ",
-          "back": "chỗ đó"
-        },
-        {
-          "front": "あそこ",
-          "back": "chỗ kia"
-        },
-        {
-          "front": "どこ",
-          "back": "ở đâu"
-        },
-        {
-          "front": "こちら",
-          "back": "chỗ này (cách nói lịch sự của ここ)"
-        },
-        {
-          "front": "そちら",
-          "back": "chỗ đó (cách nói lịch sự của そこ)"
-        },
-        {
-          "front": "あちら",
-          "back": "chỗ kia (cách nói lịch sự của あそこ)"
-        },
-        {
-          "front": "どちら",
-          "back": "ở đâu (cách nói lịch sự của どこ)"
-        },
-        {
-          "front": "きょうしつ",
-          "back": "lớp học"
-        },
-        {
-          "front": "しょくどう",
-          "back": "nhà ăn"
-        },
-        {
-          "front": "じむしょ",
-          "back": "văn phòng"
-        },
-        {
-          "front": "かいぎしつ",
-          "back": "phòng họp"
-        },
-        {
-          "front": "うけつけ",
-          "back": "lễ tân"
-        },
-        {
-          "front": "ロビー",
-          "back": "sảnh đợi"
-        },
-        {
-          "front": "へや",
-          "back": "căn phòng"
-        },
-        {
-          "front": "トイレ（おてあらい）",
-          "back": "nhà vệ sinh"
-        },
-        {
-          "front": "かいだん",
-          "back": "cầu thang"
-        },
-        {
-          "front": "エレベーター",
-          "back": "thang máy"
-        },
-        {
-          "front": "エスカレーター",
-          "back": "thang cuốn"
-        },
-        {
-          "front": "じどうはんばいき",
-          "back": "máy bán hàng tự động"
-        },
-        {
-          "front": "でんわ",
-          "back": "điện thoại"
-        },
-        {
-          "front": "くに",
-          "back": "đất nước của tôi"
-        },
-        {
-          "front": "おくに",
-          "back": "đất nước của (bạn, anh, chị)"
-        },
-        {
-          "front": "かいしゃ",
-          "back": "công ty"
-        },
-        {
-          "front": "うち",
-          "back": "nhà"
-        },
-        {
-          "front": "くつ",
-          "back": "giày"
-        },
-        {
-          "front": "ネクタイ",
-          "back": "cà vạt"
-        },
-        {
-          "front": "ワイン",
-          "back": "rượu"
-        },
-        {
-          "front": "うりば",
-          "back": "quầy bán hàng"
-        },
-        {
-          "front": "ちか",
-          "back": "tầng hầm"
-        },
-        {
-          "front": "～かい（～がい）",
-          "back": "tầng"
-        },
-        {
-          "front": "なんがい",
-          "back": "tầng mấy"
-        },
-        {
-          "front": "～えん",
-          "back": "yên"
-        },
-        {
-          "front": "いくら",
-          "back": "bao nhiêu tiền"
-        },
-        {
-          "front": "ひゃく",
-          "back": "trăm"
-        },
-        {
-          "front": "せん",
-          "back": "nghìn"
-        },
-        {
-          "front": "まん",
-          "back": "mười nghìn"
-        },
-        {
-          "front": "すみません",
-          "back": "xin lỗi"
-        },
-        {
-          "front": "どうも",
-          "back": "cám ơn"
-        },
-        {
-          "front": "いらっしゃいませ",
-          "back": "xin chào quí khách"
-        },
-        {
-          "front": "[～を] みせてください",
-          "back": "cho tôi xem ~"
-        },
-        {
-          "front": "[～を] ください",
-          "back": "cho tôi ~"
-        },
-        {
-          "front": "イタリア",
-          "back": "Ý"
-        },
-        {
-          "front": "スイス",
-          "back": "Thụy Sĩ"
-        }
+        {"front": "ここ", "back": "chỗ này"},
+        {"front": "そこ", "back": "chỗ đó"},
+        {"front": "あそこ", "back": "chỗ kia"},
+        {"front": "どこ", "back": "ở đâu"},
+        {"front": "こちら", "back": "chỗ này (cách nói lịch sự của ここ)"},
+        {"front": "そちら", "back": "chỗ đó (cách nói lịch sự của そこ)"},
+        {"front": "あちら", "back": "chỗ kia (cách nói lịch sự của あそこ)"},
+        {"front": "どちら", "back": "ở đâu (cách nói lịch sự của どこ)"},
+        {"front": "きょうしつ", "back": "lớp học"},
+        {"front": "しょくどう", "back": "nhà ăn"},
+        {"front": "じむしょ", "back": "văn phòng"},
+        {"front": "かいぎしつ", "back": "phòng họp"},
+        {"front": "うけつけ", "back": "lễ tân"},
+        {"front": "ロビー", "back": "sảnh đợi"},
+        {"front": "へや", "back": "căn phòng"},
+        {"front": "トイレ（おてあらい）", "back": "nhà vệ sinh"},
+        {"front": "かいだん", "back": "cầu thang"},
+        {"front": "エレベーター", "back": "thang máy"},
+        {"front": "エスカレーター", "back": "thang cuốn"},
+        {"front": "じどうはんばいき", "back": "máy bán hàng tự động"},
+        {"front": "でんわ", "back": "điện thoại"},
+        {"front": "くに", "back": "đất nước của tôi"},
+        {"front": "おくに", "back": "đất nước của (bạn, anh, chị)"},
+        {"front": "かいしゃ", "back": "công ty"},
+        {"front": "うち", "back": "nhà"},
+        {"front": "くつ", "back": "giày"},
+        {"front": "ネクタイ", "back": "cà vạt"},
+        {"front": "ワイン", "back": "rượu"},
+        {"front": "うりば", "back": "quầy bán hàng"},
+        {"front": "ちか", "back": "tầng hầm"},
+        {"front": "～かい（～がい）", "back": "tầng"},
+        {"front": "なんがい", "back": "tầng mấy"},
+        {"front": "～えん", "back": "yên"},
+        {"front": "いくら", "back": "bao nhiêu tiền"},
+        {"front": "ひゃく", "back": "trăm"},
+        {"front": "せん", "back": "nghìn"},
+        {"front": "まん", "back": "mười nghìn"},
+        {"front": "すみません", "back": "xin lỗi"},
+        {"front": "どうも", "back": "cám ơn"},
+        {"front": "いらっしゃいませ", "back": "xin chào quí khách"},
+        {"front": "～を みせてください", "back": "cho tôi xem ~"},
+        {"front": "～を ください", "back": "cho tôi ~"},
+        {"front": "イタリア", "back": "Ý"},
+        {"front": "スイス", "back": "Thụy Sĩ"}
+      ]
+    },
+    {
+      "name": "Lesson 4",
+      "words": [
+        {"front": "いま", "back": "bây giờ"},
+        {"front": "～じ", "back": "~ giờ"},
+        {"front": "～ふん（～ぷん）", "back": "~ phút"},
+        {"front": "はん", "back": "nửa (30 phút)"},
+        {"front": "なんじ", "back": "mấy giờ"},
+        {"front": "なんぷん", "back": "mấy phút"},
+        {"front": "あさ", "back": "buổi sáng"},
+        {"front": "ひる", "back": "buổi trưa"},
+        {"front": "ばん", "back": "buổi tối"},
+        {"front": "ごぜん", "back": "sáng (trước 12h)"},
+        {"front": "ごご", "back": "chiều (sau 12h)"},
+        {"front": "きのう", "back": "hôm qua"},
+        {"front": "きょう", "back": "hôm nay"},
+        {"front": "あした", "back": "ngày mai"},
+        {"front": "おととい", "back": "hôm kia"},
+        {"front": "あさって", "back": "ngày mốt"},
+        {"front": "けさ", "back": "sáng nay"},
+        {"front": "こんばん", "back": "tối nay"},
+        {"front": "やすみ", "back": "ngày nghỉ"},
+        {"front": "ひるやすみ", "back": "giờ nghỉ trưa"},
+        {"front": "しゅうまつ", "back": "cuối tuần"},
+        {"front": "たいいく", "back": "thể dục"},
+        {"front": "おんがく", "back": "âm nhạc"},
+        {"front": "かお", "back": "mặt"},
+        {"front": "くち", "back": "miệng"},
+        {"front": "め", "back": "mắt"},
+        {"front": "みみ", "back": "tai"},
+        {"front": "はな", "back": "mũi"},
+        {"front": "からだ", "back": "cơ thể"},
+        {"front": "あたま", "back": "đầu"},
+        {"front": "かみ", "back": "tóc"},
+        {"front": "て", "back": "tay"},
+        {"front": "あし", "back": "chân"},
+        {"front": "せんたく", "back": "giặt giũ"},
+        {"front": "そうじ", "back": "dọn dẹp"},
+        {"front": "りょうり", "back": "nấu ăn"},
+        {"front": "おちゃ", "back": "trà"},
+        {"front": "ごはん", "back": "cơm"},
+        {"front": "パン", "back": "bánh mì"},
+        {"front": "たまご", "back": "trứng"},
+        {"front": "にく", "back": "thịt"},
+        {"front": "さかな", "back": "cá"},
+        {"front": "やさい", "back": "rau"},
+        {"front": "くだもの", "back": "trái cây"},
+        {"front": "みず", "back": "nước"},
+        {"front": "おかね", "back": "tiền"},
+        {"front": "しごと", "back": "công việc"},
+        {"front": "べんきょう", "back": "học tập"},
+        {"front": "テスト", "back": "bài kiểm tra"},
+        {"front": "いま なんじ ですか", "back": "bây giờ là mấy giờ?"},
+        {"front": "おねがいします", "back": "làm ơn"},
+        {"front": "かしこまりました", "back": "vâng, tôi hiểu rồi"}
+      ]
+    },
+    {
+      "name": "Lesson 5",
+      "words": [
+        {"front": "こんげつ", "back": "tháng này"},
+        {"front": "らいげつ", "back": "tháng tới"},
+        {"front": "きょねん", "back": "năm ngoái"},
+        {"front": "ことし", "back": "năm này"},
+        {"front": "らいねん", "back": "năm tới"},
+        {"front": "ねん", "back": "năm"},
+        {"front": "なんねん", "back": "năm bao nhiêu"},
+        {"front": "くがつ", "back": "tháng chín"},
+        {"front": "なんがつ", "back": "tháng mấy"},
+        {"front": "ついたち", "back": "ngày mùng 1"},
+        {"front": "ふつか", "back": "ngày mùng 2 hoặc 2 ngày"},
+        {"front": "みっか", "back": "ngày mùng 3 hoặc 3 ngày"},
+        {"front": "よっか", "back": "ngày mùng 4 hoặc 4 ngày"},
+        {"front": "いつか", "back": "ngày mùng 5 hoặc 5 ngày"},
+        {"front": "むいか", "back": "ngày mùng 6 hoặc 6 ngày"},
+        {"front": "なのか", "back": "ngày mùng 7 hoặc 7 ngày"},
+        {"front": "ようか", "back": "ngày mùng 8 hoặc 8 ngày"},
+        {"front": "ここのか", "back": "ngày mùng 9 hoặc 9 ngày"},
+        {"front": "とおか", "back": "ngày mùng 10 hoặc 10 ngày"},
+        {"front": "じゅういちにち", "back": "ngày 11 hoặc 11 ngày"},
+        {"front": "じゅうににち", "back": "ngày 12 hoặc 12 ngày"},
+        {"front": "じゅうさんにち", "back": "ngày 13 hoặc 13 ngày"},
+        {"front": "じゅうよんにち", "back": "ngày 14 hoặc 14 ngày"},
+        {"front": "じゅうごにち", "back": "ngày 15 hoặc 15 ngày"},
+        {"front": "じゅうろくにち", "back": "ngày 16 hoặc 16 ngày"},
+        {"front": "じゅうしちにち", "back": "ngày 17 hoặc 17 ngày"},
+        {"front": "じゅうはちにち", "back": "ngày 18 hoặc 18 ngày"},
+        {"front": "じゅうくにち", "back": "ngày 19 hoặc 19 ngày"},
+        {"front": "はつか", "back": "ngày 20 hoặc 20 ngày"},
+        {"front": "にじゅういちにち", "back": "ngày 21 hoặc 21 ngày"},
+        {"front": "にじゅうににち", "back": "ngày 22 hoặc 22 ngày"},
+        {"front": "にじゅうさんにち", "back": "ngày 23 hoặc 23 ngày"},
+        {"front": "にじゅうよんにち", "back": "ngày 24 hoặc 24 ngày"},
+        {"front": "にじゅうごにち", "back": "ngày 25 hoặc 25 ngày"},
+        {"front": "にじゅうろくにち", "back": "ngày 26 hoặc 26 ngày"},
+        {"front": "にじゅうしちにち", "back": "ngày 27 hoặc 27 ngày"},
+        {"front": "にじゅうはちにち", "back": "ngày 28 hoặc 28 ngày"},
+        {"front": "にじゅうくにち", "back": "ngày 29 hoặc 29 ngày"},
+        {"front": "さんじゅうにち", "back": "ngày 30 hoặc 30 ngày"},
+        {"front": "さんじゅういちにち", "back": "ngày 31 hoặc 31 ngày"},
+        {"front": "なんにち", "back": "ngày nào/mấy ngày"},
+        {"front": "げつようび", "back": "thứ Hai"},
+        {"front": "かようび", "back": "thứ Ba"},
+        {"front": "すいようび", "back": "thứ Tư"},
+        {"front": "もくようび", "back": "thứ Năm"},
+        {"front": "きんようび", "back": "thứ Sáu"},
+        {"front": "どようび", "back": "thứ Bảy"},
+        {"front": "にちようび", "back": "Chủ nhật"},
+        {"front": "なんようび", "back": "thứ mấy"},
+        {"front": "たんじょうび", "back": "sinh nhật"},
+        {"front": "やすみ", "back": "ngày nghỉ"},
+        {"front": "いつ", "back": "khi nào"}
+      ]
+    },
+    {
+      "name": "Lesson 6",
+      "words": [
+        {"front": "ジュース", "back": "nước ép"},
+        {"front": "ビール", "back": "bia"},
+        {"front": "おさけ", "back": "rượu sake"},
+        {"front": "おかず", "back": "món ăn kèm"},
+        {"front": "みそしる", "back": "súp miso"},
+        {"front": "サラダ", "back": "salad"},
+        {"front": "スパゲッティ", "back": "mì Ý"},
+        {"front": "ハンバーガー", "back": "hamburger"},
+        {"front": "ピザ", "back": "pizza"},
+        {"front": "カレー", "back": "cà ri"},
+        {"front": "すし", "back": "sushi"},
+        {"front": "てんぷら", "back": "tempura"},
+        {"front": "やきざかな", "back": "cá nướng"},
+        {"front": "やきにく", "back": "thịt nướng"},
+        {"front": "うどん", "back": "mì udon"},
+        {"front": "そば", "back": "mì soba"},
+        {"front": "ラーメン", "back": "mì ramen"},
+        {"front": "メニュー", "back": "thực đơn"},
+        {"front": "おこのみやき", "back": "bánh xèo Nhật"},
+        {"front": "たこやき", "back": "bánh bạch tuộc"},
+        {"front": "おべんとう", "back": "cơm hộp"},
+        {"front": "レストラン", "back": "nhà hàng"},
+        {"front": "きっさてん", "back": "quán cà phê"},
+        {"front": "スーパー", "back": "siêu thị"},
+        {"front": "コンビニ", "back": "cửa hàng tiện lợi"},
+        {"front": "おいしい", "back": "ngon"},
+        {"front": "まずい", "back": "dở"}
+      ]
+    },
+    {
+      "name": "Lesson 7",
+      "words": [
+        {"front": "おきます", "back": "thức dậy"},
+        {"front": "ねます", "back": "ngủ"},
+        {"front": "はたらきます", "back": "làm việc"},
+        {"front": "やすみます", "back": "nghỉ ngơi"},
+        {"front": "べんきょうします", "back": "học"},
+        {"front": "おわります", "back": "kết thúc"},
+        {"front": "いきます", "back": "đi"},
+        {"front": "きます", "back": "đến"},
+        {"front": "かえります", "back": "về"},
+        {"front": "たべます", "back": "ăn"},
+        {"front": "のみます", "back": "uống"},
+        {"front": "みます", "back": "xem"},
+        {"front": "ききます", "back": "nghe"},
+        {"front": "よみます", "back": "đọc"},
+        {"front": "かきます", "back": "viết"},
+        {"front": "かいます", "back": "mua"},
+        {"front": "とります", "back": "chụp (ảnh)"},
+        {"front": "します", "back": "làm"},
+        {"front": "あいます", "back": "gặp"},
+        {"front": "でんわします", "back": "gọi điện"},
+        {"front": "おふろにはいります", "back": "tắm"},
+        {"front": "シャワーをあびます", "back": "tắm vòi sen"},
+        {"front": "あさごはん", "back": "bữa sáng"},
+        {"front": "ひるごはん", "back": "bữa trưa"},
+        {"front": "ばんごはん", "back": "bữa tối"},
+        {"front": "ともだち", "back": "bạn bè"},
+        {"front": "がっこう", "back": "trường học"},
+        {"front": "じかん", "back": "thời gian"},
+        {"front": "まいにち", "back": "mỗi ngày"},
+        {"front": "まいあさ", "back": "mỗi sáng"},
+        {"front": "まいばん", "back": "mỗi tối"}
+      ]
+    },
+    {
+      "name": "Lesson 8",
+      "words": [
+        {"front": "あるきます", "back": "đi bộ"},
+        {"front": "はしります", "back": "chạy"},
+        {"front": "およぎます", "back": "bơi"},
+        {"front": "うたいます", "back": "hát"},
+        {"front": "おどります", "back": "nhảy"},
+        {"front": "えをかきます", "back": "vẽ tranh"},
+        {"front": "てがみをかきます", "back": "viết thư"},
+        {"front": "しょっぷうします", "back": "mua sắm"},
+        {"front": "りょこうします", "back": "du lịch"},
+        {"front": "うんてんします", "back": "lái xe"},
+        {"front": "スポーツをします", "back": "chơi thể thao"},
+        {"front": "サッカーをします", "back": "chơi bóng đá"},
+        {"front": "テニスをします", "back": "chơi quần vợt"},
+        {"front": "やきゅうをします", "back": "chơi bóng chày"},
+        {"front": "バスケットボールをします", "back": "chơi bóng rổ"},
+        {"front": "ゲームをします", "back": "chơi game"},
+        {"front": "ピアノをひきます", "back": "chơi piano"},
+        {"front": "ギターをひきます", "back": "chơi guitar"},
+        {"front": "やすみます", "back": "nghỉ ngơi"},
+        {"front": "ねます", "back": "ngủ"},
+        {"front": "おきます", "back": "thức dậy"},
+        {"front": "ともだちとあそびます", "back": "chơi với bạn bè"},
+        {"front": "えいがをみます", "back": "xem phim"},
+        {"front": "テレビをみます", "back": "xem tivi"},
+        {"front": "ほんをよみます", "back": "đọc sách"},
+        {"front": "おんがくをききます", "back": "nghe nhạc"},
+        {"front": "やすみ", "back": "ngày nghỉ"},
+        {"front": "しゅうまつ", "back": "cuối tuần"},
+        {"front": "まいにち", "back": "mỗi ngày"},
+        {"front": "ときどき", "back": "thỉnh thoảng"}
+      ]
+    },
+    {
+      "name": "Lesson 9",
+      "words": [
+        {"front": "いちばん", "back": "số một, nhất"},
+        {"front": "すき", "back": "thích"},
+        {"front": "きらい", "back": "ghét"},
+        {"front": "じょうず", "back": "giỏi"},
+        {"front": "へた", "back": "kém"},
+        {"front": "たかい", "back": "cao, đắt"},
+        {"front": "ひくい", "back": "thấp"},
+        {"front": "おおきい", "back": "lớn"},
+        {"front": "ちいさい", "back": "nhỏ"},
+        {"front": "あたらしい", "back": "mới"},
+        {"front": "ふるい", "back": "cũ"},
+        {"front": "いい", "back": "tốt"},
+        {"front": "わるい", "back": "xấu"},
+        {"front": "あつい", "back": "nóng"},
+        {"front": "さむい", "back": "lạnh"},
+        {"front": "おいしい", "back": "ngon"},
+        {"front": "まずい", "back": "dở"},
+        {"front": "おおい", "back": "nhiều"},
+        {"front": "すくない", "back": "ít"},
+        {"front": "たのしい", "back": "vui"},
+        {"front": "つまらない", "back": "chán"},
+        {"front": "むずかしい", "back": "khó"},
+        {"front": "やさしい", "back": "dễ"},
+        {"front": "いそがしい", "back": "bận"},
+        {"front": "ひま", "back": "rảnh"},
+        {"front": "ねむい", "back": "buồn ngủ"},
+        {"front": "つかれます", "back": "mệt"},
+        {"front": "げんき", "back": "khỏe"},
+        {"front": "びょうき", "back": "ốm"}
+      ]
+    },
+    {
+      "name": "Lesson 10",
+      "words": [
+        {"front": "てんき", "back": "thời tiết"},
+        {"front": "はれ", "back": "nắng"},
+        {"front": "くもり", "back": "mây"},
+        {"front": "あめ", "back": "mưa"},
+        {"front": "ゆき", "back": "tuyết"},
+        {"front": "かぜ", "back": "gió"},
+        {"front": "たいふう", "back": "bão"},
+        {"front": "あつい", "back": "nóng"},
+        {"front": "さむい", "back": "lạnh"},
+        {"front": "すずしい", "back": "mát mẻ"},
+        {"front": "あたたかい", "back": "ấm áp"},
+        {"front": "きせつ", "back": "mùa"},
+        {"front": "はる", "back": "mùa xuân"},
+        {"front": "なつ", "back": "mùa hè"},
+        {"front": "あき", "back": "mùa thu"},
+        {"front": "ふゆ", "back": "mùa đông"},
+        {"front": "うみ", "back": "biển"},
+        {"front": "やま", "back": "núi"},
+        {"front": "かわ", "back": "sông"},
+        {"front": "みずうみ", "back": "hồ"},
+        {"front": "こうえん", "back": "công viên"},
+        {"front": "とし", "back": "thành phố"},
+        {"front": "むら", "back": "làng"},
+        {"front": "みち", "back": "đường"},
+        {"front": "ひこうき", "back": "máy bay"},
+        {"front": "でんしゃ", "back": "tàu điện"},
+        {"front": "バス", "back": "xe buýt"},
+        {"front": "タクシー", "back": "taxi"},
+        {"front": "じてんしゃ", "back": "xe đạp"},
+        {"front": "あるいて", "back": "đi bộ"}
+      ]
+    },
+    {
+      "name": "Lesson 11",
+      "words": [
+        {"front": "かぞく", "back": "gia đình"},
+        {"front": "おとうさん", "back": "bố"},
+        {"front": "おかあさん", "back": "mẹ"},
+        {"front": "あに", "back": "anh trai"},
+        {"front": "あね", "back": "chị gái"},
+        {"front": "おとうと", "back": "em trai"},
+        {"front": "いもうと", "back": "em gái"},
+        {"front": "おじいさん", "back": "ông nội/ngoại"},
+        {"front": "おばあさん", "back": "bà nội/ngoại"},
+        {"front": "おじさん", "back": "chú/bác"},
+        {"front": "おばさん", "back": "cô/dì"},
+        {"front": "いとこ", "back": "anh/chị/em họ"},
+        {"front": "りょうしん", "back": "bố mẹ"},
+        {"front": "きょうだい", "back": "anh chị em"},
+        {"front": "ひとりっこ", "back": "con một"},
+        {"front": "ペット", "back": "thú cưng"},
+        {"front": "いぬ", "back": "chó"},
+        {"front": "ねこ", "back": "mèo"},
+        {"front": "とり", "back": "chim"},
+        {"front": "さかな", "back": "cá"},
+        {"front": "うさぎ", "back": "thỏ"},
+        {"front": "かいます", "back": "nuôi"},
+        {"front": "なまえ", "back": "tên"},
+        {"front": "とし", "back": "tuổi"},
+        {"front": "せいかく", "back": "tính cách"},
+        {"front": "しごと", "back": "công việc"},
+        {"front": "すみます", "back": "sống"},
+        {"front": "どこにすみますか", "back": "あなたはどこに住んでいますか？"}
+      ]
+    },
+    {
+      "name": "Lesson 12",
+      "words": [
+        {"front": "せかい", "back": "thế giới"},
+        {"front": "ちず", "back": "bản đồ"},
+        {"front": "きた", "back": "bắc"},
+        {"front": "みなみ", "back": "nam"},
+        {"front": "ひがし", "back": "đông"},
+        {"front": "にし", "back": "tây"},
+        {"front": "りょこう", "back": "du lịch"},
+        {"front": "かいがい", "back": "nước ngoài"},
+        {"front": "しゅっちょう", "back": "công tác"},
+        {"front": "ホテル", "back": "khách sạn"},
+        {"front": "りょかん", "back": "nhà trọ kiểu Nhật"},
+        {"front": "みんしゅく", "back": "nhà nghỉ dân gian"},
+        {"front": "パスポート", "back": "hộ chiếu"},
+        {"front": "ビザ", "back": "visa"},
+        {"front": "スーツケース", "back": "valise"},
+        {"front": "おみやげ", "back": "quà lưu niệm"},
+        {"front": "ガイドブック", "back": "sách hướng dẫn du lịch"},
+        {"front": "ひこうじょう", "back": "sân bay"},
+        {"front": "えき", "back": "ga tàu"},
+        {"front": "バスてい", "back": "bến xe buýt"},
+        {"front": "ちかてつ", "back": "tàu điện ngầm"},
+        {"front": "うんてんめんきょ", "back": "bằng lái xe"},
+        {"front": "たのしみます", "back": "thưởng thức, vui vẻ"},
+        {"front": "いそぎます", "back": "vội vàng"},
+        {"front": "やすみます", "back": "nghỉ ngơi"},
+        {"front": "ねむります", "back": "ngủ"}
+      ]
+    },
+    {
+      "name": "Lesson 13",
+      "words": [
+        {"front": "ごちゅうもんは？", "back": "anh/chị dùng món gì?"},
+        {"front": "ていしょく", "back": "cơm suất"},
+        {"front": "ぎゅうどん", "back": "món cơm với thịt bò"},
+        {"front": "しょうしょう おまちください", "back": "xin anh/chị vui lòng đợi một chút"},
+        {"front": "でございます", "back": "cách nói lịch sự của です"},
+        {"front": "べつべつに", "back": "riêng lẻ"},
+        {"front": "おねがいします", "back": "làm ơn"},
+        {"front": "かしこまりました", "back": "vâng, tôi hiểu rồi"},
+        {"front": "メニュー", "back": "thực đơn"},
+        {"front": "おみず", "back": "nước lọc"},
+        {"front": "おかわり", "back": "thêm một lần nữa"},
+        {"front": "おいしい", "back": "ngon"},
+        {"front": "レストラン", "back": "nhà hàng"},
+        {"front": "カフェ", "back": "quán cà phê"},
+        {"front": "おさら", "back": "đĩa"}
+      ]
+    },
+    {
+      "name": "Counting",
+      "words": [
+        {"front": "いち", "back": "1"},
+        {"front": "に", "back": "2"},
+        {"front": "さん", "back": "3"},
+        {"front": "し", "back": "4"},
+        {"front": "ご", "back": "5"},
+        {"front": "ろく", "back": "6"},
+        {"front": "しち", "back": "7"},
+        {"front": "はち", "back": "8"},
+        {"front": "きゅう", "back": "9"},
+        {"front": "じゅう", "back": "10"},
+        {"front": "ひゃく", "back": "100"},
+        {"front": "せん", "back": "1000"},
+        {"front": "まん", "back": "10,000"},
+        {"front": "いっさい", "back": "1 tuổi"},
+        {"front": "にさい", "back": "2 tuổi"},
+        {"front": "さんさい", "back": "3 tuổi"},
+        {"front": "よんさい", "back": "4 tuổi"},
+        {"front": "ごさい", "back": "5 tuổi"},
+        {"front": "ろくさい", "back": "6 tuổi"},
+        {"front": "ななさい", "back": "7 tuổi"},
+        {"front": "はっさい", "back": "8 tuổi"},
+        {"front": "きゅうさい", "back": "9 tuổi"},
+        {"front": "じゅっさい", "back": "10 tuổi"},
+        {"front": "はたち", "back": "20 tuổi"},
+        {"front": "なんさい", "back": "mấy tuổi"},
+        {"front": "いっかい", "back": "tầng 1"},
+        {"front": "にかい", "back": "tầng 2"},
+        {"front": "さんがい", "back": "tầng 3"},
+        {"front": "よんかい", "back": "tầng 4"},
+        {"front": "ごかい", "back": "tầng 5"},
+        {"front": "ろっかい", "back": "tầng 6"},
+        {"front": "ななかい", "back": "tầng 7"},
+        {"front": "はちかい", "back": "tầng 8"},
+        {"front": "きゅうかい", "back": "tầng 9"},
+        {"front": "じゅっかい", "back": "tầng 10"},
+        {"front": "なんがい", "back": "tầng mấy"},
+        {"front": "ひとつ", "back": "1 cái (chung)"},
+        {"front": "ふたつ", "back": "2 cái (chung)"},
+        {"front": "みっつ", "back": "3 cái (chung)"},
+        {"front": "よっつ", "back": "4 cái (chung)"},
+        {"front": "いつつ", "back": "5 cái (chung)"},
+        {"front": "むっつ", "back": "6 cái (chung)"},
+        {"front": "ななつ", "back": "7 cái (chung)"},
+        {"front": "やっつ", "back": "8 cái (chung)"},
+        {"front": "ここのつ", "back": "9 cái (chung)"},
+        {"front": "とお", "back": "10 cái (chung)"},
+        {"front": "いくつ", "back": "mấy cái"},
+        {"front": "ひとり", "back": "1 người"},
+        {"front": "ふたり", "back": "2 người"},
+        {"front": "さんにん", "back": "3 người"},
+        {"front": "よにん", "back": "4 người"},
+        {"front": "ごにん", "back": "5 người"},
+        {"front": "ろくにん", "back": "6 người"},
+        {"front": "ななにん", "back": "7 người"},
+        {"front": "はちにん", "back": "8 người"},
+        {"front": "きゅうにん", "back": "9 người"},
+        {"front": "じゅうにん", "back": "10 người"},
+        {"front": "なんにん", "back": "mấy người"},
+        {"front": "いちまい", "back": "1 cái (mỏng)"},
+        {"front": "にまい", "back": "2 cái (mỏng)"},
+        {"front": "さんまい", "back": "3 cái (mỏng)"},
+        {"front": "よんまい", "back": "4 cái (mỏng)"},
+        {"front": "ごまい", "back": "5 cái (mỏng)"},
+        {"front": "ろくまい", "back": "6 cái (mỏng)"},
+        {"front": "ななまい", "back": "7 cái (mỏng)"},
+        {"front": "はちまい", "back": "8 cái (mỏng)"},
+        {"front": "きゅうまい", "back": "9 cái (mỏng)"},
+        {"front": "じゅうまい", "back": "10 cái (mỏng)"},
+        {"front": "なんまい", "back": "mấy cái (mỏng)"},
+        {"front": "いっかげつ", "back": "1 tháng"},
+        {"front": "にかげつ", "back": "2 tháng"},
+        {"front": "さんかげつ", "back": "3 tháng"},
+        {"front": "よんかげつ", "back": "4 tháng"},
+        {"front": "ごかげつ", "back": "5 tháng"},
+        {"front": "ろっかげつ", "back": "6 tháng"},
+        {"front": "ななかげつ", "back": "7 tháng"},
+        {"front": "はちかげつ", "back": "8 tháng"},
+        {"front": "きゅうかげつ", "back": "9 tháng"},
+        {"front": "じゅっかげつ", "back": "10 tháng"},
+        {"front": "なんかげつ", "back": "mấy tháng"},
+        {"front": "いちねん", "back": "1 năm"},
+        {"front": "にねん", "back": "2 năm"},
+        {"front": "さんねん", "back": "3 năm"},
+        {"front": "よんねん", "back": "4 năm"},
+        {"front": "ごねん", "back": "5 năm"},
+        {"front": "ろくねん", "back": "6 năm"},
+        {"front": "ななねん", "back": "7 năm"},
+        {"front": "はちねん", "back": "8 năm"},
+        {"front": "きゅうねん", "back": "9 năm"},
+        {"front": "じゅうねん", "back": "10 năm"},
+        {"front": "なんねん", "back": "mấy năm"}
       ]
     }
   ]
